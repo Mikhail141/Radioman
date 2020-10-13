@@ -81,7 +81,7 @@ class RadiomanTest {
         Radioman radioman = new Radioman();
         radioman.setMaxsound(10);
         radioman.setSound(11);
-        assertEquals(0,radioman.getSound());
+        assertEquals(10,radioman.getMaxsound());
 
         radioman.setMinsound(0);
         radioman.setSound(-1);
