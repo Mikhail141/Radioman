@@ -10,36 +10,42 @@ public class Radioman {
     private int maxsound;
 
     public int getNumberstation() {
+
         return numberstation;
     }
 
     public void setNumberstation(int numberstation) {
-        if (numberstation > maxstation){
+        if (numberstation > maxstation) {
             return;
         }
-        if (numberstation < minstation){
+        if (numberstation < minstation) {
             return;
         }
         this.numberstation = numberstation;
     }
 
     public int getMinstation() {
+
         return minstation;
     }
 
     public void setMinstation(int minstation) {
+
         this.minstation = minstation;
     }
 
     public int getMaxstation() {
+
         return maxstation;
     }
 
     public void setMaxstation(int maxstation) {
+
         this.maxstation = maxstation;
     }
 
     public int getSound() {
+
         return sound;
     }
 
