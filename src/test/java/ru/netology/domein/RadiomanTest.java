@@ -59,12 +59,14 @@ class RadiomanTest {
     void setNumberstation() {
         Radioman radioman = new Radioman();
         radioman.setMaxstation(9);
-        radioman.setNumberstation(10);
-        assertEquals(9,radioman.getMaxstation());
-
         radioman.setMinstation(0);
-        radioman.setNumberstation(9);
-        assertEquals(9,radioman.getNumberstation());
+        radioman.setNumberstation(10);
+        assertEquals(0,radioman.getMinstation());
+
+        radioman.setMaxstation(9);
+        radioman.setMinstation(0);
+        radioman.setNumberstation(-1);
+        assertEquals(9,radioman.getMaxstation());
 
         radioman.setMinstation(0);
         radioman.setNumberstation(-1);
