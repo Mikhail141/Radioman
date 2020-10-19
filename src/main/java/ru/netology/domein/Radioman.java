@@ -1,77 +1,59 @@
 package ru.netology.domein;
 
 public class Radioman {
-    private int numberstation;
-    private int minstation;
-    private int maxstation;
+    private int currentNumberstation;
+    private int currentSound;
 
-    private int sound;
-    private int minsound;
-    private int maxsound;
-
-    public int getNumberstation() {
-
-        return numberstation;
+    public int getCurrentNumberstation() {
+        return currentNumberstation;
     }
 
-    public void setNumberstation(int numberstation) {
-        if (numberstation > maxstation) {
+    public void setCurrentNumberstation(int currentNumberstation) {
+        this.currentNumberstation = currentNumberstation;
+    }
+
+    public int getCurrentSound() {
+        return currentSound;
+    }
+
+    public void setCurrentSound(int currentSound) {
+        this.currentSound = currentSound;
+    }
+
+    public void increaseCurrentNumberstation() {
+        if (currentNumberstation == 9) {
+
+            this.currentNumberstation = 0;
             return;
         }
-        if (numberstation < minstation) {
+        this.currentNumberstation++;
+    }
+
+    public void decreaseCurrentNumberstation() {
+        if (currentNumberstation <= 0) {
+            this.currentNumberstation = 9;
             return;
         }
-        this.numberstation = numberstation;
+        this.currentNumberstation--;
     }
 
-    public int getMinstation() {
+    public void increaseCurrentSound() {
+        if (currentSound >= 10) {
 
-        return minstation;
-    }
-
-    public void setMinstation(int minstation) {
-
-        this.minstation = minstation;
-    }
-
-    public int getMaxstation() {
-
-        return maxstation;
-    }
-
-    public void setMaxstation(int maxstation) {
-
-        this.maxstation = maxstation;
-    }
-
-    public int getSound() {
-
-        return sound;
-    }
-
-    public void setSound(int sound) {
-        if (sound > maxsound) {
+            this.currentSound = 10;
             return;
         }
-        if (sound < minsound) {
+        this.currentSound++;
+    }
+
+    public void decreaseCurrentSound() {
+        if (currentSound == 0) {
+
+            this.currentSound = 0;
             return;
         }
-        this.sound = sound;
-    }
+        this.currentSound --;
 
-    public int getMinsound() {
-        return minsound;
-    }
-
-    public void setMinsound(int minsound) {
-        this.minsound = minsound;
-    }
-
-    public int getMaxsound() {
-        return maxsound;
-    }
-
-    public void setMaxsound(int maxsound) {
-        this.maxsound = maxsound;
     }
 }
+

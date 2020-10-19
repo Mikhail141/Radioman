@@ -7,83 +7,78 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadiomanTest {
 
     @Test
-    void getNumberstationAndsetNumberstation() {
+    void getNumberstation() {
         Radioman radioman = new Radioman();
+        int maxstation = 9;
+        int minstation = 0;
 
-        radioman.setMinstation(0);
-        radioman.setMaxstation(9);
-        radioman.setNumberstation(3);
-        assertEquals(3, radioman.getNumberstation());
+        radioman.setCurrentNumberstation(3);
+        assertEquals(3,radioman.getCurrentNumberstation());
 
     }
 
     @Test
-    void getMinstationAndsetMinstation() {
+    void getSound() {
         Radioman radioman = new Radioman();
-        radioman.setMinstation(0);
-        assertEquals(0, radioman.getMinstation());
+
+        int maxsound = 10;
+        int minsound = 0;
+
+        radioman.setCurrentSound(10);
+        assertEquals(10,radioman.getCurrentSound());
     }
 
-    @Test
-    void getMaxstationsetMaxstation() {
-        Radioman radioman = new Radioman();
-        radioman.setMaxstation(9);
-        assertEquals(9, radioman.getMaxstation());
-    }
 
     @Test
-    void getSoundAndsetSound() {
+    void increaseCurrentNumberstation() {
         Radioman radioman = new Radioman();
-        radioman.setMinsound(0);
-        radioman.setMaxsound(10);
 
-        radioman.setSound(5);
-        assertEquals(5, radioman.getSound());
-    }
+        radioman.setCurrentNumberstation(9);
+        radioman.increaseCurrentNumberstation();
+        assertEquals(0,radioman.getCurrentNumberstation());
 
-    @Test
-    void getMinsoundAndsetMinsound() {
-        Radioman radioman = new Radioman();
-        radioman.setMinsound(0);
-        assertEquals(0, radioman.getMinsound());
-    }
-
-    @Test
-    void getMaxsound() {
-        Radioman radioman = new Radioman();
-        radioman.setMaxsound(10);
-        assertEquals(10, radioman.getMaxsound());
-    }
-
-    @Test
-    void setNumberstation() {
-        Radioman radioman = new Radioman();
-        radioman.setMaxstation(9);
-        radioman.setMinstation(0);
-        radioman.setNumberstation(10);
-        assertEquals(0, radioman.getMinstation());
-
-        radioman.setMaxstation(9);
-        radioman.setMinstation(0);
-        radioman.setNumberstation(-1);
-        assertEquals(9, radioman.getMaxstation());
-
-        radioman.setMinstation(0);
-        radioman.setNumberstation(-1);
-        assertEquals(0, radioman.getMinstation());
-
+        radioman.setCurrentNumberstation(0);
+        radioman.increaseCurrentNumberstation();
+        assertEquals(1,radioman.getCurrentNumberstation());
 
     }
 
     @Test
-    void setSound() {
+    void decreaseCurrentNumberstation() {
         Radioman radioman = new Radioman();
-        radioman.setMaxsound(10);
-        radioman.setSound(11);
-        assertEquals(10, radioman.getMaxsound());
 
-        radioman.setMinsound(0);
-        radioman.setSound(-1);
-        assertEquals(0, radioman.getSound());
+        radioman.setCurrentNumberstation(0);
+        radioman.decreaseCurrentNumberstation();
+        assertEquals(9,radioman.getCurrentNumberstation());
+
+        radioman.setCurrentNumberstation(8);
+        radioman.decreaseCurrentNumberstation();
+        assertEquals(7,radioman.getCurrentNumberstation());
+    }
+
+    @Test
+    void increaseCurrentSound() {
+        Radioman radioman = new Radioman();
+
+        radioman.setCurrentSound(10);
+        radioman.increaseCurrentSound();
+        assertEquals(10,radioman.getCurrentSound());
+
+        radioman.setCurrentSound(7);
+        radioman.increaseCurrentSound();
+        assertEquals(8,radioman.getCurrentSound());
+    }
+
+    @Test
+    void decreaseCurrentSound() {
+        Radioman radioman = new Radioman();
+
+        radioman.setCurrentSound(0);
+        radioman.decreaseCurrentSound();
+        assertEquals(0,radioman.getCurrentSound());
+
+        radioman.setCurrentSound(8);
+        radioman.decreaseCurrentSound();
+        assertEquals(7,radioman.getCurrentSound());
     }
 }
