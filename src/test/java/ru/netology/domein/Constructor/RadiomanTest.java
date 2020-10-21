@@ -1,11 +1,12 @@
-package ru.netology.domein;
+package ru.netology.domein.Constructor;
 
 import org.junit.jupiter.api.Test;
+import ru.netology.domein.Radioman;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadiomanTest {
-    Radioman radioman = new Radioman();
+    ru.netology.domein.Radioman radioman = new Radioman();
 
     @Test
     void getNumberstation() {

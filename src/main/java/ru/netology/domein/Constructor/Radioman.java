@@ -1,4 +1,4 @@
-package ru.netology.domein;
+package ru.netology.domein.Constructor;
 
 public class Radioman {
     private int currentNumberstation = 5;
