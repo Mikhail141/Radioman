@@ -9,7 +9,7 @@ class RadiomanTest {
     @Test
     void getNumberstation() {
         Radioman radioman = new Radioman();
-        int maxstation = 9;
+        int maxstation = 10;
         int minstation = 0;
 
         radioman.setCurrentNumberstation(3);
@@ -21,11 +21,11 @@ class RadiomanTest {
     void getSound() {
         Radioman radioman = new Radioman();
 
-        int maxsound = 10;
+        int maxsound = 100;
         int minsound = 0;
 
-        radioman.setCurrentSound(10);
-        assertEquals(10,radioman.getCurrentSound());
+        radioman.setCurrentSound(100);
+        assertEquals(100,radioman.getCurrentSound());
     }
 
 
@@ -33,7 +33,7 @@ class RadiomanTest {
     void increaseCurrentNumberstation() {
         Radioman radioman = new Radioman();
 
-        radioman.setCurrentNumberstation(9);
+        radioman.setCurrentNumberstation(10);
         radioman.increaseCurrentNumberstation();
         assertEquals(0,radioman.getCurrentNumberstation());
 
@@ -49,7 +49,7 @@ class RadiomanTest {
 
         radioman.setCurrentNumberstation(0);
         radioman.decreaseCurrentNumberstation();
-        assertEquals(9,radioman.getCurrentNumberstation());
+        assertEquals(10,radioman.getCurrentNumberstation());
 
         radioman.setCurrentNumberstation(8);
         radioman.decreaseCurrentNumberstation();
@@ -60,9 +60,9 @@ class RadiomanTest {
     void increaseCurrentSound() {
         Radioman radioman = new Radioman();
 
-        radioman.setCurrentSound(10);
+        radioman.setCurrentSound(100);
         radioman.increaseCurrentSound();
-        assertEquals(10,radioman.getCurrentSound());
+        assertEquals(100,radioman.getCurrentSound());
 
         radioman.setCurrentSound(7);
         radioman.increaseCurrentSound();
